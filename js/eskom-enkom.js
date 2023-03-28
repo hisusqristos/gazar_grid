@@ -1,20 +1,20 @@
-let pxs = 20
+let movingSpeed = 20
 
 function checkKey(key) {
   if (key === "w") {
-    y -= pxs;
+    y -= movingSpeed;
     redraw();
   }
   if (key === "s") {
-    y += pxs;
+    y += movingSpeed;
     redraw();
   }
   if (key === "a") {
-    x -= pxs;
+    x -= movingSpeed;
     redraw();
   }
   if (key === "d") {
-    x += pxs;
+    x += movingSpeed;
     redraw();
   }
 }
