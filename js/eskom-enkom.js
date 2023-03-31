@@ -1,26 +1,29 @@
-let movingSpeed = 20
+let movingSpeed = 20;
 
 function checkKey(key) {
   if (key === "w") {
     y -= movingSpeed;
-    redraw();
+    console.log("w");
   }
   if (key === "s") {
     y += movingSpeed;
-    redraw();
+    console.log("s");
   }
   if (key === "a") {
     x -= movingSpeed;
-    redraw();
+    console.log("a");
   }
   if (key === "d") {
     x += movingSpeed;
-    redraw();
+    console.log("d");
   }
 }
 
-function eskomEnkom() {
+function moveMap() {
   if (keyIsPressed) {
     checkKey(key);
+    loop();
+  } else {
+    noLoop(); // desperately trying to defeat loops
   }
-}
+} 

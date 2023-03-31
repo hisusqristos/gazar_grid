@@ -26,7 +26,7 @@ var yRO = 0;
 const tiles = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(300, 500);
   cols = width / tileSize + buffer;
   rows = height / tileSize + buffer;
 
@@ -40,7 +40,7 @@ function drawTerrain() {
   yRO = y % tileSize;
   for (let col = 0; col < cols; col++) {
     for (let row = 0; row < rows; row++) {
-      tiles[col + row * cols] = getTile(col, row);
+      tiles[col + row * cols] = pickColor();
     }
   }
 
@@ -49,17 +49,12 @@ function drawTerrain() {
       fill(tiles[col + row * cols]);
       rect(
         (col - buffer / 2) * tileSize - xRO,
-        (row - buffer / 2) * tileSize - yRO,
+        (row - buffer / 2) * tileSize - yRO + tileSize,
         tileSize,
         tileSize
       );
     }
   }
-}
-
-function getTile(x, y) {
-  const color = pickColor();
-  return color;
 }
 
 function pickColor() {
@@ -77,9 +72,7 @@ function pickColor() {
   return color;
 }
 
-async function draw() {
+function draw() {
   clear();
-  await drawTerrain();
-  // noLoop();
-  eskomEnkom()
+  drawTerrain();
 }
