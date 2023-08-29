@@ -1,5 +1,5 @@
 # Gazar Grid
-Playing + having fun ♫꒰･‿･๑꒱
+
 
 | Result | Reference |
 | --- | --- |
